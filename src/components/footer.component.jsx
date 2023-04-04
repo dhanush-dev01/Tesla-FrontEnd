@@ -1,8 +1,12 @@
-import React from "react";
-import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs";
 
-let Footer = () => {
+import React from "react";
+import "../styles/styles.css";
+import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs"; // import the social media icons
+import { NavLink } from "react-router-dom";
+
+let Footer=()=> {
   return (
+    
     <footer className="footer">
       
     <div className="row">
@@ -10,18 +14,18 @@ let Footer = () => {
    
         <div className="footer-links">
           <ul>
-            <li>
-              <a href="#">Model S</a>
-            </li>
-            <li>
-              <a href="#">Model X</a>
-            </li>
-            <li>
-              <a href="#">Model Y</a>
-            </li>
-            <li>
-              <a href="#">Model 3</a>
-            </li>
+            <NavLink to={"/models"}><li>
+              Model S
+            </li></NavLink>
+            <NavLink to={"/model3"}><li>
+              Model 3
+            </li></NavLink>
+            <NavLink to={"/modelx"}><li>
+              Model X
+            </li></NavLink>
+            <NavLink to={"/modely"}><li>
+              Model Y
+            </li></NavLink>
            
           </ul>
         </div>
@@ -29,13 +33,13 @@ let Footer = () => {
        
         <div className="col-12 col-md-6 col-xl-6 col-xxl-6">
         <div className="footer-social-media">
-          <a href="#">
+          <a href="https://www.facebook.com/TeslaMotorsCorp/">
             <BsFacebook />
           </a>
-          <a href="#">
+          <a href="https://twitter.com/tesla">
             <BsTwitter />
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/teslamotors/">
             <BsInstagram />
           </a>
         </div>
@@ -45,6 +49,6 @@ let Footer = () => {
     </div>
     </footer>
   );
-};
+}
 
 export default Footer;

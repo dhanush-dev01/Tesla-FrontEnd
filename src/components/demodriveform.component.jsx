@@ -61,11 +61,11 @@ const DemoDriveForm = () => {
   };
 
   const branches = {
-    Bangalore: ["Branch A", "Branch B", "Branch C", "Branch D", "Branch E"],
-    Delhi: ["Branch F", "Branch G", "Branch H", "Branch I", "Branch J"],
-    Mumbai: ["Branch K", "Branch L", "Branch M", "Branch N", "Branch O"],
-    Chennai: ["Branch P", "Branch Q", "Branch R", "Branch S", "Branch T"],
-    Kolkata: ["Branch U", "Branch V", "Branch W", "Branch X", "Branch Y"],
+    Bangalore: ["Jayanagar", "Koramangala", "Jp Nagar", "Banashankari", "Indiranagar"],
+    Delhi: ["Chandni Chowk", "Shastri Nagar", "Karol Bagh", "Paharganj", "Daryaganj"],
+    Mumbai: ["Andheri", "Bandra", "Borivali", "Goregaon", "Juhu"],
+    Chennai: ["Anna Nagar", "Besant Nagar", "Mylapore", "Adyar", "Kotturpuram"],
+    Kolkata: ["Tollygunge", "Bhawanipur", "Jadavpur", "Salt lake", "Park Street"],
   };
 
   return (
@@ -207,8 +207,8 @@ const DemoDriveForm = () => {
           />
         </div>
 <br />
-        <button type="submit" className="btn btn-primary">
-          Submit
+        <button type="submit" className="btn-form">
+          Confirm Your Demo Drive
         </button>
       </form>
     </div>
