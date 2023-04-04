@@ -278,7 +278,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  height: 100%;
 }
 
 .demo-drive-form {
@@ -288,8 +290,13 @@
 
 .demo-drive-image {
   text-align: center;
+  margin-top: 10rem;
 }
 
-
+@media screen and (max-width:767px) {
+  .demo-drive-image {
+    margin-top: 0px;
+  }
+}
  
   
