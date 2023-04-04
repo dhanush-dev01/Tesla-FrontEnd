@@ -5,9 +5,11 @@ import model3 from "../assets/Model-3.png";
 import models from "../assets/Model-S.png";
 import modelx from "../assets/Model-X.png";
 import modely from "../assets/Model-Y.png";
+import NavBar from "./navbar.component";
+import Footer from "./footer.component";
 
 const DemoDriveForm = () => {
-  const [carModel, setCarModel] = useState("");
+  const [carModel, setCarModel] = useState("Model S");
   const [city, setCity] = useState("");
   const [branch, setBranch] = useState("");
   const [date, setDate] = useState(null);
@@ -67,12 +69,15 @@ const DemoDriveForm = () => {
   };
 
   return (
+    <>
+    <NavBar/>
     <div className="container-fluid demo-drive-form-container">
       <div className="row">
         <div className="col-md-6">
           <form onSubmit={handleSubmit} className="demo-drive-form">
             <div className="form-group">
                 <h1>Schedule A Demo Drive</h1>
+                <br />
               <label htmlFor="carModelSelect">Select Car Model</label>
               <select
                 className="form-control"
@@ -81,7 +86,6 @@ const DemoDriveForm = () => {
                 onChange={handleCarModelChange}
                 required
               >
-                <option value="">--Select--</option>
                 <option value="Model S">Model S</option>
                 <option value="Model 3">Model 3</option>
                 <option value="Model X">Model X</option>
@@ -202,42 +206,48 @@ const DemoDriveForm = () => {
             required
           />
         </div>
-
+<br />
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>
     </div>
 
-    <div className="col-md-6 demo-drive-image">
-        <h1>{carModel}</h1>
+    <div className="col-md-6 col-sm-10 demo-drive-image ">
       {carModel === "Model S" && (
         <img
           src={models}
           alt="Model S"
+          className="img-fluid"
         />
       )}
       {carModel === "Model 3" && (
         <img
           src={model3}
           alt="Model 3"
+          className="img-fluid"
         />
       )}
       {carModel === "Model X" && (
         <img
           src={modelx}
           alt="Model X"
+          className="img-fluid"
         />
       )}
       {carModel === "Model Y" && (
        <img
        src={modely}
        alt="Model Y"
+       className="img-fluid"
      />
    )}
+   <h1>{carModel}</h1>
  </div>
 </div>
 </div>
+<Footer/>
+</>
 );
 }
 

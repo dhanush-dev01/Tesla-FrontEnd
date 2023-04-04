@@ -19,19 +19,19 @@ let NavBar=()=>{
          <NavLink to={"/"}><a className="nav-link" aria-current="page">Home</a></NavLink>
         </li>
         <li className="nav-item">
-        <NavLink to={"/demodrive"}><a className="nav-link" aria-current="page">Demo Drive</a></NavLink>
+        <NavLink to={"/demodrive"}><button className="nav-link" aria-current="page">Demo Drive</button></NavLink>
         </li>
         <li className="nav-item">
-        <NavLink to={"/modelS"}><a className="nav-link" >Model S</a></NavLink>
+        <NavLink to={"/modelS"}><button className="nav-link" >Model S</button></NavLink>
         </li>
         <li className="nav-item">
-        <NavLink to={"/model3"}><a className="nav-link" >Model 3</a></NavLink>
+        <NavLink to={"/model3"}><button className="nav-link" >Model 3</button></NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={"/modelX"}><a className="nav-link" >Model X</a></NavLink>
+          <NavLink to={"/modelX"}><button className="nav-link" >Model X</button></NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={"/modelY"}><a className="nav-link" >Model Y</a></NavLink>
+          <NavLink to={"/modelY"}><button className="nav-link" >Model Y</button></NavLink>
         </li>
       </ul>
     </div>

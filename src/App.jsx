@@ -1,4 +1,3 @@
-import './App.css';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import HomePage from './components/homepage.component';
 import ModelX from './components/modelx.component'
@@ -6,11 +5,12 @@ import ModelS from './components/models.component';
 import ModelY from './components/modely.component';
 import Model3 from './components/model3.component';
 import DemoDriveForm from './components/demodriveform.component';
-import NavBar from './components/navbar.component';
+
+
 let App=()=> {
+
   return (
     <div className='App'>
-      
       <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage/>} /> 
