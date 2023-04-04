@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import desc1 from "../assets/ModelY-desc1.png";
 import desc2 from "../assets/ModelY-desc2.png";
 import desc3 from "../assets/ModelY-desc3.png";
@@ -101,7 +102,7 @@ let ModelY = ()=>{
 <h6>Battery and Drive Unit Limited Warranty</h6>
 <p>December 2027 / unlimited mileage</p>
 <br />
-<button className="button-desc ">Demo Drive</button>
+<NavLink to={"/demodrive"}><button className="button-desc ">Demo Drive</button></NavLink>
 </div>
 
     
