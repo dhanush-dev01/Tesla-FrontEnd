@@ -10,8 +10,8 @@ import NavBar from './components/navbar.component';
 let App=()=> {
   return (
     <div className='App'>
-      <NavBar/>
-      {/* <BrowserRouter>
+      
+      <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage/>} /> 
             <Route path="/demodrive" element={<DemoDriveForm />} />
@@ -20,7 +20,7 @@ let App=()=> {
           <Route path="/modelS" element={<ModelS/>}/>
             <Route path="/modelX" element={<ModelX/>}/>
           </Routes> 
-        </BrowserRouter> */}
+        </BrowserRouter>
     </div>
   );
 }
