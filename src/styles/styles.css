@@ -1,0 +1,295 @@
+ /* Navbar */
+ a{
+  text-decoration: none;
+ }
+ .navbar{
+    font-family: 'Orbitron', sans-serif;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+  }
+  .nav-link {
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  .nav-link:hover {
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  
+  .nav-link::after {
+    content: "";
+    display: block;
+    height: 3px;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    width: 0%;
+    background-color: white;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .nav-link:active {
+    border-radius: 0px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+
+  /* Slide Show */
+
+  .tesla-cars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    min-height: 85vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(228deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 0%, rgba(254,254,254,1) 100%);
+  }
+  
+  .car-image {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide-in {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .slide-in.active {
+    transform: scale(0.9);
+  }
+
+  
+  .car-description {
+    font-size: 1.2rem;
+    /* margin-top: 0px; */
+    font-family: monospace;
+    text-align: center;
+  }
+  
+  .car-models {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 6%;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .car-model {
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 10%;
+  }
+  
+  .car-model.active,
+  .car-model:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+  }
+  .button-model {
+    border: none;
+    background-color: white;
+    border: 1px solid transparent;
+    color: black;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 150px;
+  }
+  
+  .button-model:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+  }
+  
+    
+  @media (max-width: 768px) {
+    .car-models {
+      margin-top: 5rem;
+    }
+  
+    .car-model {
+      width: 20%;
+    }
+  }
+  @media (max-width: 822px) {
+    .car-models {
+      margin-top: 15rem;
+    }
+  
+    .car-model {
+      width: 20%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .car-models {
+      margin-top: 10rem;
+    }
+  
+    .car-model {
+      width: 30%;
+      font-size: 0.8rem;
+    }
+  
+    .car-description {
+      font-size: 1rem;
+    }
+  
+    .btn-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .btn-container button {
+      margin-top: 1rem;
+    }
+  }
+
+  /* Car details */
+
+  .model-details{
+    margin-top: 4rem;
+  }
+  
+
+
+  /* Footer */
+  .footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+   
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .footer-links li {
+    margin: 0 20px;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+    
+  }
+  
+  .footer-links a:hover {
+    text-decoration: none;
+    
+    border-bottom: 1px solid #fff;
+  }
+  
+  .footer-social-media a {
+    display: inline-block;
+    margin-left: 20px;
+    color: #fff;
+  }
+  
+  .footer-social-media a:hover {
+    color: #aaa;
+  }
+  
+  .footer-text {
+    margin-top: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  .row{
+    --bs-gutter-x:0
+  }
+@media screen and (max-width:394px) {
+  .footer-links a{
+    font-size: 14px;
+  }
+}
+
+/* Description */
+
+.imagecomp{
+  background-color: black;
+}
+
+.desc-tbl{
+  color: black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  
+ } 
+
+ .button-desc {
+  border: none;
+  background-color: black;
+  border: 3px solid transparent;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 150px;
+}
+
+.button-desc:hover {
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+}
+
+.demo-drive-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.demo-drive-form {
+  width: 80%;
+  margin-right: 2rem;
+}
+
+.demo-drive-image {
+  text-align: center;
+}
+
+
+ 
+  
