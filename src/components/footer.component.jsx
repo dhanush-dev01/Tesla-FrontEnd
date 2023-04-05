@@ -14,16 +14,16 @@ let Footer=()=> {
    
         <div className="footer-links">
           <ul>
-            <NavLink to={"/models"}><li>
+            <NavLink to={"/modelS"}><li>
               Model S
             </li></NavLink>
             <NavLink to={"/model3"}><li>
               Model 3
             </li></NavLink>
-            <NavLink to={"/modelx"}><li>
+            <NavLink to={"/modelX"}><li>
               Model X
             </li></NavLink>
-            <NavLink to={"/modely"}><li>
+            <NavLink to={"/modelY"}><li>
               Model Y
             </li></NavLink>
            

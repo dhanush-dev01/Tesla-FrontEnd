@@ -19,26 +19,26 @@ let NavBar=()=>{
          <NavLink to={"/"}><a className="nav-link" aria-current="page">Home</a></NavLink>
         </li>
         <li className="nav-item">
-        <NavLink to={"/demodrive"}><button className="nav-link" aria-current="page">Demo Drive</button></NavLink>
+        <NavLink to={"/demodrive"}><a className="nav-link" aria-current="page">Demo Drive</a></NavLink>
         </li>
         <li className="nav-item">
-        <NavLink to={"/modelS"}><button className="nav-link" >Model S</button></NavLink>
+        <NavLink to={"/modelS"}><a className="nav-link" >Model S</a></NavLink>
         </li>
         <li className="nav-item">
-        <NavLink to={"/model3"}><button className="nav-link" >Model 3</button></NavLink>
+        <NavLink to={"/model3"}><a className="nav-link" >Model 3</a></NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={"/modelX"}><button className="nav-link" >Model X</button></NavLink>
+          <NavLink to={"/modelX"}><a className="nav-link" >Model X</a></NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={"/modelY"}><button className="nav-link" >Model Y</button></NavLink>
+          <NavLink to={"/modelY"}><a className="nav-link" >Model Y</a></NavLink>
         </li>
       </ul>
     </div>
   </div>
   <ul className="navbar-nav ml-auto collapse navbar-collapse" id="navbarNav" >
         <li className="nav-item">
-          <a className="nav-link" href="/">Account</a>
+          <a className="nav-link" href="/login">Account</a>
          </li>
       </ul>
 </nav>

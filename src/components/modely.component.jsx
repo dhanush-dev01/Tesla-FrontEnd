@@ -3,17 +3,25 @@ import desc1 from "../assets/ModelY-desc1.png";
 import desc2 from "../assets/ModelY-desc2.png";
 import desc3 from "../assets/ModelY-desc3.png";
 import desc4 from "../assets/ModelY-desc4.png";
-import Footer from "./footer.component";
-import NavBar from "./navbar.component";
+import { useEffect, useState } from "react";
+import Loading from "./loading.component";
 
 
 let ModelY = ()=>{
+
+  const [isloading,setLoading]=useState(true);
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setLoading(false)
+    },500)
+  },[])
+
   return(
     
 <>
-<NavBar/>
-      <div className="row">
-        <div className="col-md-12 col-lg-8" style={{marginTop:'4rem'}}>
+{isloading?<Loading/>:<div className="row">
+        <div className="col-md-12 col-lg-8" style={{marginTop:'7rem'}}>
           <div id="myCarousel" className="carousel carousel-dark slide" data-bs-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
@@ -107,8 +115,8 @@ let ModelY = ()=>{
 
     
 </div>
-        </div>
-        <Footer/>
+        </div>}
+      
     </>
     
   );

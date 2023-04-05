@@ -245,6 +245,13 @@
 .imagecomp{
   background-color: black;
 }
+/* .models{
+  background-color: grey;
+} */
+
+/* .carousel{
+  border: 5px solid black;
+} */
 
 .desc-tbl{
   color: black;
@@ -273,6 +280,15 @@
   color: black;
   border: 3px solid black;
 }
+/* @media only screen and (max-width: 416px) {
+  .button-desc {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+} */
+
 
 /* Form */
 
@@ -288,6 +304,15 @@
 .demo-drive-form {
   width: 80%;
   margin-right: 2rem;
+  background-color: #000;
+  padding: 20px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.demo-drive-form label {
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
 
 .demo-drive-image {
@@ -304,7 +329,7 @@
 .btn-form {
   color: #fff;
   background-color: #000;
-  border: none;
+  border: 2px solid white;
   padding: 10px 20px;
   font-size: 16px;
   text-transform: uppercase;
@@ -318,5 +343,138 @@
   cursor: pointer;
   border: 2px solid #000;
 }
+
+
+
+@media only screen and (max-width: 416px) {
+  .btn-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .demo-drive-form{
+    width: 100%;
+  }
+}
+/* .demo-drive-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.demo-drive-form h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.form-control {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+}
+
+.datepicker {
+  border-radius: 5px;
+}
+
+.btn-form {
+  width: 100%;
+  max-width: 200px;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-form:hover {
+  background-color: #fff;
+  color: #000;
+} */
+/* .demo-drive-form {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  padding: 20px;
+  width: 60%;
+  margin: 4rem auto;
+}
+
+.demo-drive-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.demo-drive-form select,
+.demo-drive-form input[type="text"],
+.demo-drive-form input[type="tel"],
+.demo-drive-form input[type="email"] {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 0;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.demo-drive-form select option {
+  background-color: black;
+  color: white;
+}
+
+.btn-form {
+  color: #fff;
+  background-color: #000;
+  border: 2px solid white;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.btn-form:hover {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  border: 2px solid #000;
+} */
+
+
+
+
 
   

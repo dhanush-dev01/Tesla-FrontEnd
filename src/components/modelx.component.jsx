@@ -3,16 +3,23 @@ import desc1 from "../assets/ModelX-desc1.jpg";
 import desc2 from "../assets/ModelX-desc2.jpg";
 import desc3 from "../assets/ModelX-desc3.jpg";
 import desc4 from "../assets/ModelX-desc4.png";
-import Footer from "./footer.component";
-import NavBar from "./navbar.component";
+import { useEffect, useState } from "react";
+import Loading from "./loading.component";
 
 let ModelX = ()=>{
+
+  const [isloading,setLoading]=useState(true);
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setLoading(false)
+    },500)
+  },[])
   return(
     
 <>
-<NavBar/>
-      <div className="row">
-        <div className="col-md-12 col-lg-8" style={{marginTop:'4rem'}}>
+{isloading?<Loading/>:<div className="row">
+        <div className="col-md-12 col-lg-8" style={{marginTop:'7rem'}}>
           <div id="myCarousel" className="carousel carousel-dark slide" data-bs-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
@@ -110,8 +117,8 @@ let ModelX = ()=>{
 
     
 </div>
-        </div>
-    <Footer/>
+        </div>}
+      
     </>
   );
 };
