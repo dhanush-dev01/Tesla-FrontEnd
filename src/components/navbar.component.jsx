@@ -38,7 +38,7 @@ let NavBar=()=>{
   </div>
   <ul className="navbar-nav ml-auto collapse navbar-collapse" id="navbarNav" >
         <li className="nav-item">
-          <a className="nav-link" href="/login">Account</a>
+          <a className="nav-link" href="/login">Login</a>
          </li>
       </ul>
 </nav>

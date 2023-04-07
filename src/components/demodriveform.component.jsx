@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import model3 from "../assets/Model-3.png";
@@ -6,6 +6,8 @@ import models from "../assets/Model-S.png";
 import modelx from "../assets/Model-X.png";
 import modely from "../assets/Model-Y.png";
 import Loading from "./loading.component";
+
+
 const DemoDriveForm = () => {
   const [carModel, setCarModel] = useState("Model S");
   const [city, setCity] = useState("");
@@ -17,6 +19,10 @@ const DemoDriveForm = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [formdata, setForm] = useState({});
+  const [formError, setFormError] = useState('');
+  const [confirmBook, setBooking]=useState(false);
+
+  const buttonRef = useRef(null);
 
   const handleCarModelChange = (event) => {
     setCarModel(event.target.value);
@@ -53,9 +59,59 @@ const DemoDriveForm = () => {
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
+   let handleConfirm=()=>{
+     if(confirmBook){
+      buttonRef.current.click()
+    }
+  }
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+ async function  handleSubmit (event) {
+   event.preventDefault();
+    handleConfirm();
+    if (!carModel) {
+      setFormError('*Please Select Model');
+      return;
+    }
+    if (!city) {
+      setFormError('*Please Select City');
+      return;
+    }
+    if (!branch) {
+      setFormError('*Please Select Branch');
+      return;
+    }
+    if (!date) {
+      setFormError('*Please Select the date');
+      return;
+    }
+    if (!title) {
+      setFormError('*Please Select Title');
+      return;
+    }
+    if (!firstName.match(/^[A-Za-z]+$/)) {
+      setFormError('*Invalid First Name');
+      return;
+    }
+    if (!lastName.match(/^[A-Za-z]+$/)) {
+      setFormError('*Invalid Last Name');
+      return;
+    }
+    if (!phoneNumber.match(/^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/)) {
+      setFormError('*Please enter a valid 10 digit phone number');
+      return;
+    }
+    if (!email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+      setFormError('*Please Enter a Valid Email ID');
+      return;
+    }
+    setFormError('');
+    // alert('Form Submitted Successfully!');
+    setBooking(true);
+    // handleConfirm();
+    
+
+
+
     setForm({
       model: carModel,
       city: city,
@@ -68,7 +124,7 @@ const DemoDriveForm = () => {
       email: email,
     });
 
-    console.log(formdata);
+    // console.log(formdata);
 
     await fetch("http://localhost:7080/savedetails", {
       method: "post",
@@ -84,35 +140,54 @@ const DemoDriveForm = () => {
         return response.text();
       })
       .then((text) => {
+        
         if(text==="updated"){
-            
+          // buttonRef.current.click()
+          // setBooking(true);
+        
         }
-      });
+        // handleConfirm();
+      }
+      )
+      console.log(formdata);
+      
   };
 
   const branches = {
     Bangalore: [
-      "Jayanagar",
-      "Koramangala",
-      "Jp Nagar",
-      "Banashankari",
-      "Indiranagar",
+      "Sujai Kumar, Tesla inc. , Jayanagar, 560004",
+      "Bharath Naidu, Tesla inc., Koramangala, 560034",
+      "Abhilash Gowda, Tesla inc., Jp Nagar, 560078",
+      "Imran Siddiqui, Tesla inc., Banashankari, 560050  ",
+      "Priya Shankar, Tesla inc., Indiranagar, 560038 ",
     ],
     Delhi: [
-      "Chandni Chowk",
-      "Shastri Nagar",
-      "Karol Bagh",
-      "Paharganj",
-      "Daryaganj",
+      "Aditya Prakash, Tesla inc., Chandni Chowk, 110006",
+      "Abdul Ali, Tesla inc., Shastri Nagar, 110052" ,
+      "Prateek Sikarvar, Tesla inc., Karol Bagh, 110005 ",
+      "Anil Gupta, Tesla inc., Paharganj, 110055 ",
+      "Ashish Shukla, Tesla inc., Daryaganj, 110002 ",
     ],
-    Mumbai: ["Andheri", "Bandra", "Borivali", "Goregaon", "Juhu"],
-    Chennai: ["Anna Nagar", "Besant Nagar", "Mylapore", "Adyar", "Kotturpuram"],
+    Mumbai: [
+      "Akash Malhotra, Tesla inc., Andheri, 400047",
+      "Siddharth Shukla, Tesla inc., Bandra, 400050",
+      "Abhinav Chaturvedi, Tesla inc.,Borivali, 400092",
+      "Shubhas Goel, Tesla inc., Goregaon, 400060",
+      "Pranav Kumar, Tesla inc., Juhu, 400049"
+    ],
+    Chennai: [
+       "Kumaraswamy Iyer, Tesla inc., Anna Nagar, 600040",
+       "Muttu Swami, Tesla inc., Besant Nagar, 600090",
+       "Selvaratnam, Tesla inc., Mylapore, 600004",
+       "Malavika Iyer, Tesla inc., Adyar, 600020",
+       "Shanmuga, Tesla inc., Kotturpuram, 600085 "
+    ],
     Kolkata: [
-      "Tollygunge",
-      "Bhawanipur",
-      "Jadavpur",
-      "Salt lake",
-      "Park Street",
+      "Benoy Basu,Tesla inc., Tollygunge, 700033",
+      "Subroto Mukharjee, Tesla inc., Bhawanipur, 743270",
+      "Shruthi Banarjee, Tesla inc., Jadavpur, 700032",
+      "Deepa Chatterjee, Tesla inc., Salt lake, 700064",
+      "Sunil Bhattacharya, Tesla inc., Park Street, 700016",
     ],
   };
 
@@ -136,15 +211,15 @@ const DemoDriveForm = () => {
                 <div className="form-group">
                   <h1>Schedule A Demo Drive</h1>
                   <br />
-                  <label htmlFor="carModelSelect">Select Car Model</label>
+                  <label htmlFor="carModelSelect">*Select Car Model</label>
                   <select
                     className="form-control"
                     id="carModelSelect"
                     value={carModel}
                     onChange={handleCarModelChange}
-                    required
+                    
                   >
-                    <option value="Model S">Model S</option>
+                    <option className="optionvalue" value="Model S">Model S</option>
                     <option value="Model 3">Model 3</option>
                     <option value="Model X">Model X</option>
                     <option value="Model Y">Model Y</option>
@@ -152,13 +227,13 @@ const DemoDriveForm = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="citySelect">Select City</label>
+                  <label htmlFor="citySelect">*Select City</label>
                   <select
                     className="form-control"
                     id="citySelect"
                     value={city}
                     onChange={handleCityChange}
-                    required
+                    
                   >
                     <option value="">--Select--</option>
                     <option value="Bangalore">Bangalore</option>
@@ -168,15 +243,14 @@ const DemoDriveForm = () => {
                     <option value="Kolkata">Kolkata</option>
                   </select>
                 </div>
-
-                <div className="form-group">
-                  <label htmlFor="branchSelect">Select Branch</label>
+                {city!==""&&<div className="form-group">
+                  <label htmlFor="branchSelect">*Select Nearest Branch</label>
                   <select
                     className="form-control"
                     id="branchSelect"
                     value={branch}
                     onChange={handleBranchChange}
-                    required
+                    
                   >
                     <option value="">--Select--</option>
                     {branches[city] &&
@@ -186,10 +260,10 @@ const DemoDriveForm = () => {
                         </option>
                       ))}
                   </select>
-                </div>
+                </div>}
 
                 <div className="form-group">
-                  <label htmlFor="datePicker">Select Date For Demo Drive</label>
+                  <label htmlFor="datePicker">*Select Date</label>
                   {/* <br /> */}
                   <DatePicker
                     id="datePicker"
@@ -198,18 +272,18 @@ const DemoDriveForm = () => {
                     onChange={handleDateChange}
                     dateFormat="dd/MM/yyyy"
                     minDate={new Date()}
-                    required
+                    
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="titleSelect">Select Title</label>
+                  <label htmlFor="titleSelect">*Select Title</label>
                   <select
                     className="form-control"
                     id="titleSelect"
                     value={title}
                     onChange={handleTitleChange}
-                    required
+                    
                   >
                     <option value="">--Select--</option>
                     <option value="Mr.">Mr.</option>
@@ -218,58 +292,62 @@ const DemoDriveForm = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="firstNameInput">First Name</label>
+                  <label htmlFor="firstNameInput">*First Name</label>
                   <input
                     type="text"
                     className="form-control"
                     id="firstNameInput"
                     value={firstName}
                     onChange={handleFirstNameChange}
-                    required
+                    
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="lastNameInput">Last Name</label>
+                  <label htmlFor="lastNameInput">*Last Name</label>
                   <input
                     type="text"
                     className="form-control"
                     id="lastNameInput"
                     value={lastName}
                     onChange={handleLastNameChange}
-                    required
+                    
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="phoneNumberInput">Phone Number</label>
+                  <label htmlFor="phoneNumberInput">*Phone Number</label>
                   <input
                     type="tel"
                     className="form-control"
                     id="phoneNumberInput"
                     value={phoneNumber}
                     onChange={handlePhoneNumberChange}
-                    required
+                    
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="emailInput">Email Address</label>
+                  <label htmlFor="emailInput">*Email Address</label>
                   <input
                     type="email"
                     className="form-control"
                     id="emailInput"
                     value={email}
                     onChange={handleEmailChange}
-                    required
+                    
                   />
                 </div>
+                {formError && <div className="validate">{formError}</div>}
                 <br />
                 <button type="submit" className="btn-form">
                   Confirm Your Demo Drive
                 </button>
               </form>
             </div>
+            <div className="tost-container" style={{display:'none'}}>
+                  <button ref={buttonRef} data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+                </div>
 
             <div className="col-md-6 col-sm-10 demo-drive-image ">
               {carModel === "Model S" && (
@@ -286,8 +364,31 @@ const DemoDriveForm = () => {
               )}
               <h1>{carModel}</h1>
             </div>
+           <div>
+</div>
+
           </div>
+          {/* Confirm Booking */}
+          <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog modal-dialog-centered">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+      </div>
+      <div className="modal-body">
+        ...
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-primary">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+
         </div>
+        
       )}
     </>
   );

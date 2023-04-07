@@ -7,7 +7,8 @@ import HomePage from './components/homepage.component';
 // import DemoDriveForm from './components/demodriveform.component';
 import Routing from './components/routing.component';
 import Login from './components/login.component';
-import DemoForm from './components/sampledemo';
+import Modals from './components/modal';
+
 
 
 let App=()=> {
@@ -23,6 +24,7 @@ let App=()=> {
             <Route path="/modelX" element={<Routing/>}/>
             <Route path="/modelS" element={<Routing/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/modal" element={<Modals/>}/>
           </Routes> 
         </BrowserRouter>
     </div>
