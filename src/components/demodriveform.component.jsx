@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import model3 from "../assets/Model-3.png";
@@ -18,11 +20,17 @@ const DemoDriveForm = () => {
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
-  const [formdata, setForm] = useState({});
   const [formError, setFormError] = useState('');
-  const [confirmBook, setBooking]=useState(false);
+  // const [confirmBook, setBooking]=useState(false)
+  const [show, setShow] = useState(false);
 
-  const buttonRef = useRef(null);
+  const handleClose = () => {
+    setShow(false)
+    window.location.reload();
+  };
+
+  
+
 
   const handleCarModelChange = (event) => {
     setCarModel(event.target.value);
@@ -59,15 +67,53 @@ const DemoDriveForm = () => {
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
-   let handleConfirm=()=>{
-     if(confirmBook){
-      buttonRef.current.click()
-    }
+   const handleConfirm=()=>{
+    // setBooking(false);
   }
 
+  const formattedDate = date && date.toLocaleDateString('en-US', {day: 'numeric', month: 'short', year: 'numeric'});
+  const branches = {
+    Bangalore: [
+      "Sujai Kumar, Tesla inc. , Jayanagar, 560004",
+      "Bharath Naidu, Tesla inc., Koramangala, 560034",
+      "Abhilash Gowda, Tesla inc., Jp Nagar, 560078",
+      "Imran Siddiqui, Tesla inc., Banashankari, 560050  ",
+      "Priya Shankar, Tesla inc., Indiranagar, 560038 ",
+    ],
+    Delhi: [
+      "Aditya Prakash, Tesla inc., Chandni Chowk, 110006",
+      "Abdul Ali, Tesla inc., Shastri Nagar, 110052" ,
+      "Prateek Sikarvar, Tesla inc., Karol Bagh, 110005 ",
+      "Anil Gupta, Tesla inc., Paharganj, 110055 ",
+      "Ashish Shukla, Tesla inc., Daryaganj, 110002 ",
+    ],
+    Mumbai: [
+      "Akash Malhotra, Tesla inc., Andheri, 400047",
+      "Siddharth Shukla, Tesla inc., Bandra, 400050",
+      "Abhinav Chaturvedi, Tesla inc.,Borivali, 400092",
+      "Shubhas Goel, Tesla inc., Goregaon, 400060",
+      "Pranav Kumar, Tesla inc., Juhu, 400049"
+    ],
+    Chennai: [
+       "Kumaraswamy Iyer, Tesla inc., Anna Nagar, 600040",
+       "Muttu Swami, Tesla inc., Besant Nagar, 600090",
+       "Selvaratnam, Tesla inc., Mylapore, 600004",
+       "Malavika Iyer, Tesla inc., Adyar, 600020",
+       "Shanmuga, Tesla inc., Kotturpuram, 600085 "
+    ],
+    Kolkata: [
+      "Benoy Basu,Tesla inc., Tollygunge, 700033",
+      "Subroto Mukharjee, Tesla inc., Bhawanipur, 743270",
+      "Shruthi Banarjee, Tesla inc., Jadavpur, 700032",
+      "Deepa Chatterjee, Tesla inc., Salt lake, 700064",
+      "Sunil Bhattacharya, Tesla inc., Park Street, 700016",
+    ],
+  };
+
+
  async function  handleSubmit (event) {
+
    event.preventDefault();
-    handleConfirm();
     if (!carModel) {
       setFormError('*Please Select Model');
       return;
@@ -105,14 +151,10 @@ const DemoDriveForm = () => {
       return;
     }
     setFormError('');
-    // alert('Form Submitted Successfully!');
-    setBooking(true);
-    // handleConfirm();
-    
+    // alert('Booking Details Submitted Successfully!');
+  
 
-
-
-    setForm({
+    const newForm = {
       model: carModel,
       city: city,
       branch: branch,
@@ -122,73 +164,39 @@ const DemoDriveForm = () => {
       lastName: lastName,
       phoneNumber: phoneNumber,
       email: email,
-    });
+    }
 
-    // console.log(formdata);
+
+
+    console.log(newForm);
+    console.log(date);
 
     await fetch("http://localhost:7080/savedetails", {
       method: "post",
       cache: "no-cache",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formdata),
+      body: JSON.stringify(newForm ),
     })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`);
+        }else{
+          // setBooking(true);
+          setShow(true)
         }
 
+        // console.log(confirmBook)
         return response.text();
       })
       .then((text) => {
         
         if(text==="updated"){
-          // buttonRef.current.click()
+         console.log("data",text)
           // setBooking(true);
-        
         }
-        // handleConfirm();
       }
       )
-      console.log(formdata);
       
-  };
-
-  const branches = {
-    Bangalore: [
-      "Sujai Kumar, Tesla inc. , Jayanagar, 560004",
-      "Bharath Naidu, Tesla inc., Koramangala, 560034",
-      "Abhilash Gowda, Tesla inc., Jp Nagar, 560078",
-      "Imran Siddiqui, Tesla inc., Banashankari, 560050  ",
-      "Priya Shankar, Tesla inc., Indiranagar, 560038 ",
-    ],
-    Delhi: [
-      "Aditya Prakash, Tesla inc., Chandni Chowk, 110006",
-      "Abdul Ali, Tesla inc., Shastri Nagar, 110052" ,
-      "Prateek Sikarvar, Tesla inc., Karol Bagh, 110005 ",
-      "Anil Gupta, Tesla inc., Paharganj, 110055 ",
-      "Ashish Shukla, Tesla inc., Daryaganj, 110002 ",
-    ],
-    Mumbai: [
-      "Akash Malhotra, Tesla inc., Andheri, 400047",
-      "Siddharth Shukla, Tesla inc., Bandra, 400050",
-      "Abhinav Chaturvedi, Tesla inc.,Borivali, 400092",
-      "Shubhas Goel, Tesla inc., Goregaon, 400060",
-      "Pranav Kumar, Tesla inc., Juhu, 400049"
-    ],
-    Chennai: [
-       "Kumaraswamy Iyer, Tesla inc., Anna Nagar, 600040",
-       "Muttu Swami, Tesla inc., Besant Nagar, 600090",
-       "Selvaratnam, Tesla inc., Mylapore, 600004",
-       "Malavika Iyer, Tesla inc., Adyar, 600020",
-       "Shanmuga, Tesla inc., Kotturpuram, 600085 "
-    ],
-    Kolkata: [
-      "Benoy Basu,Tesla inc., Tollygunge, 700033",
-      "Subroto Mukharjee, Tesla inc., Bhawanipur, 743270",
-      "Shruthi Banarjee, Tesla inc., Jadavpur, 700032",
-      "Deepa Chatterjee, Tesla inc., Salt lake, 700064",
-      "Sunil Bhattacharya, Tesla inc., Park Street, 700016",
-    ],
   };
 
   const [isloading, setLoading] = useState(true);
@@ -345,9 +353,6 @@ const DemoDriveForm = () => {
                 </button>
               </form>
             </div>
-            <div className="tost-container" style={{display:'none'}}>
-                  <button ref={buttonRef} data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
-                </div>
 
             <div className="col-md-6 col-sm-10 demo-drive-image ">
               {carModel === "Model S" && (
@@ -369,23 +374,56 @@ const DemoDriveForm = () => {
 
           </div>
           {/* Confirm Booking */}
-          <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog modal-dialog-centered">
-    <div className="modal-content">
-      <div className="modal-header">
-        <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-      </div>
-      <div className="modal-body">
-        ...
-      </div>
-      <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-primary">Okay</button>
-      </div>
-    </div>
-  </div>
-</div>
+          <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" centered backdrop="static">
+        <Modal.Header>
+          <Modal.Title>Test Drive Booking Placed!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <table className="details-table">
+  <tbody>
+    <tr>
+      <td className="details-table__heading">Model:</td>
+      <td className="details-table__data">{carModel}</td>
+    </tr>
+    <tr>
+      <td className="details-table__heading">Name</td>
+      <td className="details-table__data">{`${title} ${firstName} ${lastName}`}</td>
+    </tr>
+    <tr>
+      <td className="details-table__heading">Email:</td>
+      <td className="details-table__data">{email}</td>
+    </tr>
+    <tr>
+      <td className="details-table__heading">Phone:</td>
+      <td className="details-table__data">{phoneNumber}</td>
+    </tr>
+    <tr>
+      <td className="details-table__heading">Selected Branch:</td>
+      <td className="details-table__data">{branch}</td>
+    </tr>
+    <tr>
+      <td className="details-table__heading">City:</td>
+      <td className="details-table__data">{city}</td>
+    </tr>
+    <tr>
+      <td className="details-table__heading">Date:</td>
+      <td className="details-table__data">{formattedDate}</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<br />
+<h6>Thank You for Booking a Test Drive with Tesla!</h6>
+<h6>Our Sales Team will get in touch with you soon.</h6>
+
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={handleClose} className="btn-confirm">
+            Done
+          </Button>
+        </Modal.Footer>
+      </Modal>
+          
 
         </div>
         

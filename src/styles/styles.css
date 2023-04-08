@@ -11,10 +11,10 @@
   .nav-link {
     color: white;
     padding: 0.5rem 1rem;
+    /* text-decoration: none; */
     margin-left: 10px;
     margin-right: 10px;
     position: relative;
-    text-decoration: none;
     transition: all 0.2s ease-in-out;
   }
   .nav-link:hover {
@@ -38,6 +38,7 @@
   
   .nav-link:hover::after {
     width: 100%;
+    color: white;
   }
   
   .nav-link:active {
@@ -61,6 +62,7 @@
   
   .car-image {
     margin-top: 1rem;
+    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,7 +122,6 @@
     margin: 0.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 150px;
   }
   
   .button-model:hover {
@@ -242,9 +243,6 @@
 
 /* Description */
 
-.imagecomp{
-  background-color: black;
-}
 /* .models{
   background-color: lightgrey;
 }
@@ -261,6 +259,9 @@
   width: 60%;
   
  } 
+ p{
+  display: inline-list-item;
+ }
 
  .button-desc {
   border: none;
@@ -280,199 +281,9 @@
   color: black;
   border: 3px solid black;
 }
-/* @media only screen and (max-width: 416px) {
-  .button-desc {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-} */
 
 
-/* Form */
-
-/* .demo-drive-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 6rem;
-  margin-bottom: 4rem;
-  height: 100%;
-}
-
-.demo-drive-form {
-  width: 80%;
-  margin-right: 2rem;
-  background-color: #000;
-  padding: 20px;
-  color: #fff;
-  border-radius: 10px;
-}
-
-.demo-drive-form label {
-  margin-bottom: 10px;
-  margin-top: 5px;
-}
-
-.demo-drive-image {
-  text-align: center;
-  margin-top: 10rem;
-}
-
-@media screen and (max-width:767px) {
-  .demo-drive-image {
-    margin-top: 0px;
-  }
-}
- 
-.btn-form {
-  color: #fff;
-  background-color: #000;
-  border: 2px solid white;
-  padding: 10px 20px;
-  font-size: 16px;
-  text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
-  border-radius: 2px;
-}
-
-.btn-form:hover {
-  background-color: #fff;
-  color: #000;
-  cursor: pointer;
-  border: 2px solid #000;
-}
-
-
-
-@media only screen and (max-width: 416px) {
-  .btn-form {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-  .demo-drive-form{
-    width: 100%;
-  }
-} */
-/* .demo-drive-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 60%;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: black;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.demo-drive-form h1 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.form-control {
-  width: 100%;
-  height: 40px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  font-size: 16px;
-}
-
-.datepicker {
-  border-radius: 5px;
-}
-
-.btn-form {
-  width: 100%;
-  max-width: 200px;
-  margin-top: 20px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #000;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-form:hover {
-  background-color: #fff;
-  color: #000;
-} */
-/* .demo-drive-form {
-  background-color: black;
-  color: white;
-  border: 1px solid white;
-  padding: 20px;
-  width: 60%;
-  margin: 4rem auto;
-}
-
-.demo-drive-form label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.demo-drive-form select,
-.demo-drive-form input[type="text"],
-.demo-drive-form input[type="tel"],
-.demo-drive-form input[type="email"] {
-  background-color: black;
-  color: white;
-  border: 1px solid white;
-  border-radius: 0;
-  padding: 5px;
-  width: 100%;
-  margin-bottom: 5px;
-}
-
-.demo-drive-form select option {
-  background-color: black;
-  color: white;
-}
-
-.btn-form {
-  color: #fff;
-  background-color: #000;
-  border: 2px solid white;
-  padding: 10px 20px;
-  font-size: 16px;
-  text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
-  border-radius: 2px;
-  width: 100%;
-}
-
-.btn-form:hover {
-  background-color: #fff;
-  color: #000;
-  cursor: pointer;
-  border: 2px solid #000;
-} */
-
+/* Demo Drive Form */
 
 
 
@@ -493,6 +304,7 @@
 .demo-drive-image {
   text-align: center;
   margin-top: 10rem;
+  /* position: sticky; */
 }
 
 @media screen and (max-width:767px) {
@@ -569,6 +381,81 @@ select {
     width: 100%;
   }
 }
+
+/* Modal Confirm Booking */
+.details-table {
+  border-collapse: collapse;
+  margin: 20px;
+}
+
+.details-table__heading {
+  padding: 10px;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: top;
+  width: 150px;
+}
+
+.details-table__data {
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+  width: calc(100% - 150px);
+}
+
+.details-table__data:first-child {
+  padding-top: 0;
+}
+
+.details-table__data:last-child {
+  padding-bottom: 0;
+}
+
+.details-table tr:last-child .details-table__data {
+  padding-bottom: 10px;
+}
+
+.details-table tr:first-child .details-table__heading {
+  padding-top: 10px;
+}
+
+.details-table tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.details-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.details-table td {
+  border: none;
+}
+
+.btn-confirm{
+  color: #fff;
+  background-color: #000;
+  border: 2px solid white;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2px;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.btn-confirm:hover {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  border: 2px solid #000;
+}
+
+/* Login Page */
+
+
+
 
 
 

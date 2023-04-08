@@ -76,9 +76,9 @@ const SlideShow = () => {
         <div className="car-details">
           <p className="car-description">{cars[carModel].description}</p>
         </div>
-      </div>
       <NavLink to={`/${carModel}`}><button className="button-model">View Details</button></NavLink>
       <NavLink to={"/demodrive"}><button className="button-model">Demo Drive</button></NavLink>
+      </div>
     </div>
   );
 };

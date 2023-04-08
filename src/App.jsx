@@ -1,13 +1,9 @@
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import HomePage from './components/homepage.component';
-// import ModelX from './components/modelx.component'
-// import ModelS from './components/models.component';
-// import ModelY from './components/modely.component';
-// import Model3 from './components/model3.component';
-// import DemoDriveForm from './components/demodriveform.component';
 import Routing from './components/routing.component';
 import Login from './components/login.component';
-import Modals from './components/modal';
+import 'react-bootstrap'
+
 
 
 
@@ -24,7 +20,6 @@ let App=()=> {
             <Route path="/modelX" element={<Routing/>}/>
             <Route path="/modelS" element={<Routing/>}/>
             <Route path="/login" element={<Login/>}/>
-            <Route path="/modal" element={<Modals/>}/>
           </Routes> 
         </BrowserRouter>
     </div>

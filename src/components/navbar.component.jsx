@@ -7,38 +7,38 @@ let NavBar=()=>{
 
     return(
         <header>  
-        <nav className="navbar navbar-expand-lg fixed-top">
+        <nav className="navbar navbar-expand-lg bg-black  fixed-top" data-bs-theme="dark">
   <div className="container-fluid">
     <a className="navbar-brand mr-auto"  href="/"><img src={logo} alt="Tesla Logo" width={100} /></a>
-    <button className="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button className="navbar-toggler bg-black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item">
-         <NavLink to={"/"}><a className="nav-link" aria-current="page">Home</a></NavLink>
+         <NavLink to={"/"}><button className="nav-link" aria-current="page">Home</button></NavLink>
         </li>
         <li className="nav-item">
-        <NavLink to={"/demodrive"}><a className="nav-link" aria-current="page">Demo Drive</a></NavLink>
+        <NavLink to={"/demodrive"}><button className="nav-link" aria-current="page">Demo Drive</button></NavLink>
         </li>
         <li className="nav-item">
-        <NavLink to={"/modelS"}><a className="nav-link" >Model S</a></NavLink>
+        <NavLink to={"/modelS"}><button className="nav-link" >Model S</button></NavLink>
         </li>
         <li className="nav-item">
-        <NavLink to={"/model3"}><a className="nav-link" >Model 3</a></NavLink>
+        <NavLink to={"/model3"}><button className="nav-link" >Model 3</button></NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={"/modelX"}><a className="nav-link" >Model X</a></NavLink>
+          <NavLink to={"/modelX"}><button className="nav-link" >Model X</button></NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to={"/modelY"}><a className="nav-link" >Model Y</a></NavLink>
+          <NavLink to={"/modelY"}><button className="nav-link" >Model Y</button></NavLink>
         </li>
       </ul>
     </div>
   </div>
   <ul className="navbar-nav ml-auto collapse navbar-collapse" id="navbarNav" >
         <li className="nav-item">
-          <a className="nav-link" href="/login">Login</a>
+          <NavLink to={"/login"}><button className="nav-link">Login</button></NavLink>
          </li>
       </ul>
 </nav>
