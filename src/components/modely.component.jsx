@@ -61,17 +61,20 @@ let ModelY = ()=>{
 
 <table className="desc-tbl">
 
+<tbody>
 <tr className="thead">
   <th><h4><b>314 mi</b></h4></th>
   <th><h4><b>135 mph</b></h4></th>
   <th><h4><b>4.8 s</b></h4></th>
-  
 </tr>
+</tbody>
+<tbody>
 <tr>
   <td>Range(est.)</td>
   <td>Top Speed</td>
   <td>0-60 mph*</td>
 </tr>
+</tbody>
 </table>
 <br />
 <h2>Key Features</h2>
@@ -103,10 +106,9 @@ let ModelY = ()=>{
 <p>December 2023 / 50,000 total miles</p>
 
 <h6>Used Vehicle Limited Warranty</h6>
-<text>Additional 1 year / 10,000 miles</text>
-<text>Begins after Basic Vehicle Limited Warranty expires</text>
-<br />
-<br />
+<p>Additional 1 year / 10,000 miles
+Begins after Basic Vehicle Limited Warranty expires
+</p>
 <h6>Battery and Drive Unit Limited Warranty</h6>
 <p>December 2027 / unlimited mileage</p>
 <br />

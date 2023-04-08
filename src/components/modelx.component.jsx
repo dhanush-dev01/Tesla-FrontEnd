@@ -62,17 +62,20 @@ let ModelX = ()=>{
 
 <table className="desc-tbl">
 
+<tbody>
 <tr className="thead">
   <th><h4><b>333 mi</b></h4></th>
   <th><h4><b>2.5s</b></h4></th>
   <th><h4><b>9.9s</b></h4></th>
-  
 </tr>
+</tbody>
+<tbody>
 <tr>
   <td>Range(EPA est.)</td>
   <td>0-60 mph*</td>
   <td>1/4 Mile</td>
 </tr>
+</tbody>
 </table>
 <br />
 <h2>Key Features</h2>
@@ -105,10 +108,9 @@ let ModelX = ()=>{
 <p>December 2023 / 50,000 total miles</p>
 
 <h6>Used Vehicle Limited Warranty</h6>
-<text>Additional 1 year / 10,000 miles</text>
-<text>Begins after Basic Vehicle Limited Warranty expires</text>
-<br />
-<br />
+<p>Additional 1 year / 10,000 miles
+Begins after Basic Vehicle Limited Warranty expires
+</p>
 <h6>Battery and Drive Unit Limited Warranty</h6>
 <p>December 2027 / unlimited mileage</p>
 <br />
