@@ -70,7 +70,7 @@ let Model3 = ()=>{
 <br />
 <ul style={{textAlign:'left', width:'50%',marginLeft:'auto',marginRight:'auto'}}>
     <li>Deep Blue Metallic Paint</li>
-    <li>18’’ Aero Wheels</li>
+    <li>18" Aero Wheels</li>
     <li>All Black Partial Premium Interior</li>
     <li>Autopilot</li>
     <li>Front and Rear Heated Seats</li>

@@ -211,8 +211,8 @@
   
   .footer-links a:hover {
     text-decoration: none;
-    
-    border-bottom: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid white;
   }
   
   .footer-social-media a {
@@ -246,10 +246,10 @@
   background-color: black;
 }
 /* .models{
-  background-color: grey;
-} */
+  background-color: lightgrey;
+}
 
-/* .carousel{
+.carousel{
   border: 5px solid black;
 } */
 
@@ -292,7 +292,7 @@
 
 /* Form */
 
-.demo-drive-form-container {
+/* .demo-drive-form-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -356,7 +356,7 @@
   .demo-drive-form{
     width: 100%;
   }
-}
+} */
 /* .demo-drive-form {
   display: flex;
   flex-direction: column;
@@ -472,6 +472,103 @@
   cursor: pointer;
   border: 2px solid #000;
 } */
+
+
+
+
+.demo-drive-form-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  /* height: 100%; */
+}
+
+.demo-drive-form {
+  width: 80%;
+  margin-right: 2rem;
+}
+
+.demo-drive-image {
+  text-align: center;
+  margin-top: 10rem;
+}
+
+@media screen and (max-width:767px) {
+  .demo-drive-image {
+    margin-top: 0px;
+  }
+}
+.btn-form {
+  color: #fff;
+  background-color: #000;
+  border: 2px solid white;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.btn-form:hover {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  border: 2px solid #000;
+}
+
+.validate{
+  color: rgb(220, 86, 86);
+  /* text-align: center; */
+  /* font-weight: bolder; */
+  font-style: italic;
+  font-size: medium;
+  padding: 2px;
+  /* border: 1px dashed rosybrown; */
+}
+
+.form-group label{
+  font-weight: 600;
+}
+.form-control{
+  margin-top: 4px;
+  border: 1px solid black;
+}
+
+ select::-ms-expand {
+  display: none;
+}
+select {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0.5em 2em 0.5em 0.5em;
+  border: 1px solid #eee;
+  font: inherit;
+  line-height: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: right 15px top 1em, right 10px top 1em;
+  background-size: 5px 5px, 5px 5px;
+} 
+
+
+@media only screen and (max-width: 416px) {
+  .btn-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .demo-drive-form{
+    width: 100%;
+  }
+}
 
 
 
