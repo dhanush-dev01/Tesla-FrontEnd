@@ -21,12 +21,19 @@ const DemoDriveForm = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [formError, setFormError] = useState('');
-  // const [confirmBook, setBooking]=useState(false)
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
     setShow(false)
-    window.location.reload();
+    setCarModel('Model S');
+    setCity("");
+    setBranch("");
+    setDate(null);
+    setTitle("");
+    setFirstName("");
+    setLastName("");
+    setPhoneNumber("");
+    setEmail("");
   };
 
   
@@ -67,9 +74,6 @@ const DemoDriveForm = () => {
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
-   const handleConfirm=()=>{
-    // setBooking(false);
-  }
 
   const formattedDate = date && date.toLocaleDateString('en-US', {day: 'numeric', month: 'short', year: 'numeric'});
   const branches = {
@@ -215,8 +219,8 @@ const DemoDriveForm = () => {
         <div className="container-fluid demo-drive-form-container">
           <div className="row">
             <div className="col-md-6">
-              <form onSubmit={handleSubmit} className="demo-drive-form">
                 <h1>Schedule A Demo Drive</h1>
+              <form onSubmit={handleSubmit} className="demo-drive-form">
                 <div className="form-group">
                   
                   <br />

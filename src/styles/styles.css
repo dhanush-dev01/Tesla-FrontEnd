@@ -243,14 +243,6 @@
 
 /* Description */
 
-/* .models{
-  background-color: lightgrey;
-}
-
-.carousel{
-  border: 5px solid black;
-} */
-
 .desc-tbl{
   color: black;
   text-align: center;
@@ -299,11 +291,13 @@
 .demo-drive-form {
   width: 80%;
   margin-right: 2rem;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .demo-drive-image {
   text-align: center;
   margin-top: 10rem;
+  font-family: 'Orbitron', sans-serif;
   /* position: sticky; */
 }
 
@@ -336,7 +330,6 @@
   font-style: italic;
   font-size: medium;
   padding: 2px;
-
 }
 
 .form-group label{
@@ -381,6 +374,7 @@ select {
 }
 
 /* Modal Confirm Booking */
+
 .details-table {
   border-collapse: collapse;
   margin: 20px;
@@ -451,6 +445,11 @@ select {
 }
 
 /* Login Page */
+
+.login-form{
+  font-family: 'Orbitron', sans-serif;
+}
+
 
 
 
