@@ -14,7 +14,7 @@ const DemoDriveForm = () => {
   const [carModel, setCarModel] = useState("Model S");
   const [city, setCity] = useState("");
   const [branch, setBranch] = useState("");
-  const [date, setDate] = useState(null);
+  const [date, setDate] = useState("");
   const [title, setTitle] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");

@@ -1,7 +1,7 @@
 
 import React from "react";
 import "../styles/styles.css";
-import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs"; // import the social media icons
+import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs"; 
 import { NavLink } from "react-router-dom";
 
 let Footer=()=> {
@@ -33,13 +33,13 @@ let Footer=()=> {
        
         <div className="col-12 col-md-6 col-xl-6 col-xxl-6">
         <div className="footer-social-media">
-          <a href="https://www.facebook.com/TeslaMotorsCorp/">
+          <a href="https://www.facebook.com/TeslaMotorsCorp/" target="_blank" rel="noopener noreferrer">
             <BsFacebook />
           </a>
-          <a href="https://twitter.com/tesla">
+          <a href="https://twitter.com/tesla" target="_blank" rel="noopener noreferrer">
             <BsTwitter />
           </a>
-          <a href="https://www.instagram.com/teslamotors/">
+          <a href="https://www.instagram.com/teslamotors/" target="_blank" rel="noopener noreferrer">
             <BsInstagram />
           </a>
         </div>

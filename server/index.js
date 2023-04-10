@@ -58,7 +58,7 @@ app.get("/data", function (req, res) {
   Hero.find().then((dbres) => res.json(dbres));
 });
 
-app.post("/savedetails",(req,res)=>{
+app.post("/savedetails",(req,res)=>{  //setting a post route
     let a = req.body
     let detail = new Bookingform({
     model: a.model,

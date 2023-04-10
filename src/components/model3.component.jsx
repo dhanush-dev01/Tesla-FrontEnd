@@ -20,7 +20,7 @@ let Model3 = ()=>{
     
 <>
 {isloading?<Loading/>:<div className="row">
-        <div className="col-md-12 col-lg-8" style={{marginTop:'7rem'}}>
+        <div className=" col-md-12 col-lg-8" style={{marginTop:'7rem'}}>
           <div id="myCarousel" className="carousel carousel-dark slide" data-bs-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">

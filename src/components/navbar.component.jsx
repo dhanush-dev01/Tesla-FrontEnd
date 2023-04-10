@@ -10,7 +10,8 @@ let NavBar=()=>{
         <nav className="navbar navbar-expand-lg bg-black  fixed-top" data-bs-theme="dark">
   <div className="container-fluid">
     <a className="navbar-brand mr-auto"  href="/"><img src={logo} alt="Tesla Logo" width={100} /></a>
-    <button className="navbar-toggler bg-black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button className="navbar-toggler bg-black" type="button" data-bs-toggle="collapse" 
+    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
