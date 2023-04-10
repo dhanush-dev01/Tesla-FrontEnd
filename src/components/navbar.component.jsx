@@ -85,7 +85,6 @@ let NavBar=()=>{
   </div>
   <ul className="navbar-nav ml-auto collapse navbar-collapse" id="navbarNav" >
         <li className="nav-item">
-          {/* <NavLink to={"/login"}><button className="nav-link" onClick={handleShow}>Login</button></NavLink> */}
           <button className="nav-link" onClick={handleShow}>Login</button>
          </li>
       </ul>
@@ -125,9 +124,6 @@ let NavBar=()=>{
           </Form.Group>
 
           <div style={{ textAlign: 'center', marginTop: '30px', marginBottom: '5px' }}>
-            {/* <Button variant="dark" type="submit" style={{ backgroundColor: 'black', color: 'white', border: '1px solid white' }}>
-              Login
-            </Button> */}
             <button  type="submit" className='btn-form'>Login</button>
             </div>
         </Form>

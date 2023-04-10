@@ -155,7 +155,7 @@ const DemoDriveForm = () => {
       return;
     }
     setFormError('');
-    // alert('Booking Details Submitted Successfully!');
+  
   
 
     const newForm = {
@@ -185,18 +185,15 @@ const DemoDriveForm = () => {
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`);
         }else{
-          // setBooking(true);
+
           setShow(true)
         }
-
-        // console.log(confirmBook)
         return response.text();
       })
       .then((text) => {
         
         if(text==="updated"){
-         console.log("data",text)
-          // setBooking(true);
+         console.log(text)
         }
       }
       )

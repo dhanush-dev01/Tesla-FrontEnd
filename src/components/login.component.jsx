@@ -29,7 +29,7 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Perform input validation
+    // input validation
     if (username.length < 1) {
       setUsernameError('Please enter a username');
       return;
@@ -82,9 +82,6 @@ const Login = () => {
           </Form.Group>
 
           <div style={{ textAlign: 'center', marginTop: '20px' }}>
-            {/* <Button variant="dark" type="submit" style={{ backgroundColor: 'black', color: 'white', border: '1px solid white' }}>
-              Login
-            </Button> */}
             <button  type="submit" className='btn-form'>Login</button>
             </div>
         </Form>

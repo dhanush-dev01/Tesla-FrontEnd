@@ -11,7 +11,6 @@
   .nav-link {
     color: white;
     padding: 0.5rem 1rem;
-    /* text-decoration: none; */
     margin-left: 10px;
     margin-right: 10px;
     position: relative;
@@ -80,7 +79,6 @@
   
   .car-description {
     font-size: 1.2rem;
-    /* margin-top: 0px; */
     font-family: monospace;
     text-align: center;
   }
@@ -174,12 +172,10 @@
     }
   }
 
-  /* Car details */
-
   .model-details{
     margin-top: 4rem;
   }
-  
+
 
 
   /* Footer */
@@ -251,9 +247,7 @@
   width: 60%;
   
  } 
- /* p{
-  display: inline-list-item;
- } */
+ 
 
  .button-desc {
   border: none;
@@ -282,10 +276,9 @@
 .demo-drive-form-container {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   margin-top: 6rem;
   margin-bottom: 4rem;
-  /* height: 100%; */
+
 }
 
 .demo-drive-form {
@@ -298,7 +291,6 @@
   text-align: center;
   margin-top: 10rem;
   font-family: 'Orbitron', sans-serif;
-  /* position: sticky; */
 }
 
 @media screen and (max-width:767px) {
@@ -340,16 +332,7 @@
   border: 1px solid black;
 }
 
- /* select::-ms-expand {
-  display: block;
-} */
 select {
-  /* display: inline-block;
-  box-sizing: border-box;
-  padding: 0.5em 2em 0.5em 0.5em;
-  border: 1px solid #eee;
-  font: inherit;
-  line-height: inherit; */
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
